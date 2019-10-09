@@ -6,8 +6,7 @@ from deploy_app.models import *
 # Create your views here.
 
 def hello(request):
-  text = """<h1>welcome to my app !</h1>"""
-  return HttpResponse(text)
+  return render(request, 'deploy_app/home.html')
 
 def list(request, type):
   if (type == 'people'):
