@@ -8,9 +8,18 @@
     <!-- Custom styles for this template
     {% load static %}
     link rel="stylesheet" type="text/css" href="{% static 'fileName.css' %}"> -->
-
+      <style type="text/css">
+        h1 {
+          margin:50px;
+        }
+      </style>
   </head>
   <body class="text-center">
-    <a href="{% url 'list' %}">View All People in Database</a>
+    <div>
+        <h1 class="main-border">Identity Manager:</h1>
+        <a href="{% url 'list-people'%}">View All People in Database</a> <br>
+        <a href="{% url 'list-enterprises'%}">View All Enterprises in Database</a><br>
+        <a href="{% url 'list-governments'%}">View All Governments in Database</a><br>
+    </div>
   </body>
 </html>

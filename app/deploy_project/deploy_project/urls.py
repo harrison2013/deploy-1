@@ -20,7 +20,11 @@ from deploy_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.hello),
-    path('api/v1/<str:type>', views.list),
+    path('db/', views.database),
+    path('api/v1/<str:type>', views.list, name="list-items"),
+    path('people/', views.people, name="list-people"),
+    path('enterprises/', views.enterprises, name="list-enterprises"),
+    path('governments/', views.governments, name="list-governments"),
     path('api/v1/<str:type>/<int:item_id>', views.item),
     path('api/v1/<str:type>/create', views.add_item),
     path('api/v1/<str:type>/<int:item_id>/delete', views.delete_item)

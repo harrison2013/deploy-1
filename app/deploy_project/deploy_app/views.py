@@ -8,6 +8,9 @@ from deploy_app.models import *
 def hello(request):
   return render(request, 'deploy_app/home.html')
 
+def database(request):
+  return reder(request, 'deploy_app/database.html')
+
 def list(request, type):
   if (type == 'people'):
     item_list = Person.objects.order_by('pk')
@@ -23,6 +26,15 @@ def list(request, type):
   template = loader.get_template('deploy_app/list.html')
   context = { 'item_list': item_list, 'item_type': item_type }
   return HttpResponse(template.render(context, request))
+
+def people(request):
+  return list(request, 'people')
+
+def governments(request):
+  return list(request, 'governments')
+
+def enterprises(request):
+  return list(request, 'enterprises')
 
 def item(request, type, item_id):
   if (type == 'person'):
